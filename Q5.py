@@ -36,14 +36,14 @@ def shortestPath(n, edges, s):
     for a in range(1, n + 1):
         answer[a] = float('inf')
 
+    # We initialize s's position in dictionary to zero because we start at that position.
+    answer[s] = 0
+
     # We create an adjacency matrix of the with to represent the graph of our edges array.
     graph = createAdjacencyMatrix(edges)
 
     # Initializing the heap and adding the weight and the starting node.
     heap = [(0, s)]
-
-    # We initialize s's position in dictionary to zero because we start at that position.
-    answer[s] = 0
 
     # We run a Breadth First Search while our heap is not empty.
     while heap:
